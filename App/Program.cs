@@ -1,7 +1,18 @@
 ﻿
 
 using Models;
+using System.Collections;
 
+public class TraineeComparer : IComparer
+{
+    public int Compare(object? x, object? y)
+    {
+        Trainee left = x as Trainee;
+        Trainee right = y as Trainee;
+
+        return left.Id.CompareTo(right.Id);
+    }
+}
 public class Program
 {
     public static void Main()
@@ -16,7 +27,7 @@ public class Program
             new Trainee(){Id=1, Name="Ahmed"}, 
         };
 
-        Array.Sort(Ts);
+        Array.Sort(Ts, new TraineeComparer() );
 
         foreach(Trainee i in Ts)
             Console.WriteLine(i.ToString());

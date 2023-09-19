@@ -7,20 +7,13 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Trainee : IComparable
+    public class Trainee 
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public override string ToString()
         {
             return $"{Id}, {Name}";
-        }
-        int IComparable.CompareTo(object obj)
-        {
-            Trainee T = obj as Trainee;
-
-            return Id.CompareTo(T.Id);
-           
         }
         public static implicit operator double(Trainee trinee)
         {
