@@ -16,7 +16,7 @@ public class Program
             new Trainee(){Id=1, Name="Ahmed"}, 
         };
 
-        Helper.Sort(arr);
+        Array.Sort(Ts);
 
         foreach(Trainee i in Ts)
             Console.WriteLine(i.ToString());
