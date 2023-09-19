@@ -6,14 +6,7 @@ public class Program
 {
     public static void Main()
     {
-        int[] arr = new int[] { 1, 2 };
-        unsafe
-        {
-            fixed (int* ptr = arr)
-            {
-                for(int i =0; i< 2; i++)
-                    Console.WriteLine( *(ptr+i) );
-            }
-        }
+        double[] arr = new [] { (double)1, 2, 3.9, 4, 5, new Trainee() };
+        Console.WriteLine(arr.GetType());
     }
 }
