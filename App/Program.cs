@@ -6,7 +6,19 @@ public class Program
 {
     public static void Main()
     {
-        double[] arr = new [] { (double)1, 2, 3.9, 4, 5, new Trainee() };
-        Console.WriteLine(arr.GetType());
+
+        int[] arr = new
+            int[] { 100, 2, 0, 14, 5, 60, -7, 8, };
+
+        Trainee[] Ts = new Trainee[]
+        {
+            new Trainee(){Id=2, Name="Hany"}, 
+            new Trainee(){Id=1, Name="Ahmed"}, 
+        };
+
+        Helper.Sort(arr);
+
+        foreach(Trainee i in Ts)
+            Console.WriteLine(i.ToString());
     }
 }

@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Trainee
+    public class Trainee : CanBeComparable
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public bool CompareTo(object obj)
+        {
+            return Id < ((Trainee)obj).Id;
+        }
+
         public override string ToString()
         {
             return $"{Id}, {Name}";
